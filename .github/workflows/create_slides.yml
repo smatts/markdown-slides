@@ -54,7 +54,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: prepare-and-build-documents
+    needs: generate-slides
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
