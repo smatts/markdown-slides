@@ -1,6 +1,0 @@
-{
-  "marp": {
-	"inputDir": "./slides",
-	"output": "./public"
-  }
-}

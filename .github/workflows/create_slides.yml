@@ -18,8 +18,10 @@ jobs:
       with:
         node-version: 18
     - run: |
+        cd config
         npx @marp-team/marp-cli@latest
         npx @marp-team/marp-cli@latest --pdf
+        cd ..
         mkdir pdf
         mv public/*.pdf pdf/
         ls
