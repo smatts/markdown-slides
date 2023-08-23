@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  prepare-and-build-documents:
+  generate-slides:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,6 +22,9 @@ jobs:
         npx @marp-team/marp-cli@latest --pdf
         mkdir pdf
         mv ./public/*.pdf ./pdf/
+        ls
+        ls public
+        ls pdf
     - uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
