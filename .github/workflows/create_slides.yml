@@ -22,6 +22,7 @@ jobs:
         npx @marp-team/marp-cli@latest
         npx @marp-team/marp-cli@latest --pdf
         cd ..
+        rm -rf pdf
         mkdir -p pdf
         mv public/*.pdf pdf/
         ls
