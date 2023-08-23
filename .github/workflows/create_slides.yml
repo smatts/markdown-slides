@@ -25,11 +25,6 @@ jobs:
         rm -rf pdf
         mkdir -p pdf
         mv public/*.pdf pdf/
-        ls
-        echo "public:"
-        ls public
-        echo "pdf:"
-        ls pdf
     - uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
