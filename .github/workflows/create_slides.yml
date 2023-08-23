@@ -19,11 +19,8 @@ jobs:
       with:
         node-version: 18
     - run: |
-        npx @marp-team/marp-cli@latest slides.md -o index.html
-        ls -l
-        mkdir .public
-        cp -r * .public
-        mv .public public
+		cd ./config
+        npx @marp-team/marp-cli@latest
     - uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
