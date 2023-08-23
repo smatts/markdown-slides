@@ -19,8 +19,8 @@ jobs:
         node-version: 18
     - run: |
         npx @marp-team/marp-cli@latest
-		mkdir pdf
-		mv *.pdf pdf/
+        mkdir pdf
+        mv *.pdf pdf/
     - uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
