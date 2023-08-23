@@ -19,7 +19,6 @@ jobs:
       with:
         node-version: 18
     - run: |
-		cd ./config
         npx @marp-team/marp-cli@latest
     - uses: actions/upload-pages-artifact@v1
       with:
