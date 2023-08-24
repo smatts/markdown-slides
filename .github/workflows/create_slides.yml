@@ -17,15 +17,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-    - run: |
-        ls -al pdf/
-        rm -rf pdf/
-        cd config
-        npx @marp-team/marp-cli@latest
-        npx @marp-team/marp-cli@latest --pdf
-        cd ..
-        mkdir -p pdf
-        mv public/*.pdf pdf/
+    - run: ./create_slides_helper.sh
     - uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
@@ -34,6 +26,7 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        git status
         git add pdf/*
         git commit -m "Upload PDF slides"
     - name: Push changes
