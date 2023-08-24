@@ -17,7 +17,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-    - run: ./create_slides_helper.sh
+    - run: ./.github/workflows/create_slides_helper.sh
     - uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
