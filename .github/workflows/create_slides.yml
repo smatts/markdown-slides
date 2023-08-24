@@ -18,6 +18,7 @@ jobs:
       with:
         node-version: 18
     - run: |
+        ls -al pdf/
         rm -rf pdf/
         cd config
         npx @marp-team/marp-cli@latest
