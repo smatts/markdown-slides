@@ -26,6 +26,8 @@ npx @marp-team/marp-cli@latest --pdf
 cd ..
 mkdir -p pdf
 cp public/*.pdf pdf/
+mkdir -p webslides
+cp public/*.html webslides/
 
 # Create index.html
 touch index.md

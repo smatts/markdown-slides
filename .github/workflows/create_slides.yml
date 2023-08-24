@@ -31,7 +31,8 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git pull
         git status
-        git add -f pdf/
+        git add -f pdf/*
+        git add -f webslides/*
         git add -f index.html
         git commit -m "Upload PDF slides"
     - name: Push changes
