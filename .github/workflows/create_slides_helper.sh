@@ -36,5 +36,5 @@ pdf_files=$(find pdf/*.pdf -exec basename \{} .pdf \;)
 for file in $pdf_files
 do
     echo $file
-    echo "* ${file%.pdf}: [HTML]($file.html) / [PDF](pdf/$file.pdf)" >> index.md
+    echo "* ${file%.pdf}: [HTML](webslides/$file.html) / [PDF](pdf/$file.pdf)" >> index.md
 done
