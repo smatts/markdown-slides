@@ -13,4 +13,4 @@ npx @marp-team/marp-cli@latest
 npx @marp-team/marp-cli@latest --pdf
 cd ..
 mkdir -p pdf
-mv public/*.pdf pdf/
+cp public/*.pdf pdf/
