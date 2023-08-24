@@ -18,11 +18,11 @@ jobs:
       with:
         node-version: 18
     - run: |
+        rm -rf pdf/
         cd config
         npx @marp-team/marp-cli@latest
         npx @marp-team/marp-cli@latest --pdf
         cd ..
-        rm -rf pdf
         mkdir -p pdf
         mv public/*.pdf pdf/
     - uses: actions/upload-pages-artifact@v1
