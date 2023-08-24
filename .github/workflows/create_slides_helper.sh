@@ -36,4 +36,3 @@ do
     echo $file
     echo "* ${file%.pdf}: [HTML]($file.html) / [PDF](pdf/$file.pdf)" >> index.md
 done
-pandoc index.md -o index.html
