@@ -18,9 +18,13 @@ jobs:
       with:
         node-version: 18
     - run: ./.github/workflows/create_slides_helper.sh
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' 
+    - run: python3 ./.github/workflows/create-metadata-files.py
     - uses: docker://pandoc/core:2.9
       with:
-        args: "index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css"
+        args: "index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css --title ./.github/workflows/title.txt"
     # Upload PDF files
     - name: Commit files
       run: |
