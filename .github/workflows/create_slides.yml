@@ -24,8 +24,6 @@ jobs:
     - run: |
         python3 -m pip install -r ./.github/workflows/requirements.txt
         python3 ./.github/workflows/create-metadata-files.py
-        cat title.txt
-        echo $PWD
     - uses: docker://pandoc/core:2.9
       with:
         args: "title.txt index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css"
