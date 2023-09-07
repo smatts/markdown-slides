@@ -21,7 +21,9 @@ jobs:
     - uses: actions/setup-python@v4
       with:
         python-version: '3.10' 
-    - run: python3 ./.github/workflows/create-metadata-files.py
+    - run: |
+        python3 -m pip install -r ./github/workflows/requirements.txt
+        python3 ./.github/workflows/create-metadata-files.py
     - uses: docker://pandoc/core:2.9
       with:
         args: "index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css --title ./.github/workflows/title.txt"
