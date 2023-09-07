@@ -16,10 +16,12 @@
     font-family: 'Manrope';
     font-size: 12px;
     line-height: 1.7;
-    margin: auto;
-    max-width: 80%;
+    margin: 0 auto;
     background: #fefefe;
-    text-align: center;
+    display: grid;
+    padding-left: 2em;
+    padding-right: 2em;
+    max-width: 70em;
   }
   
   a {
