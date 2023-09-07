@@ -2,7 +2,6 @@
 
 import yaml
 import json
-import requests
 import os.path
 from datetime import datetime
 from babel.dates import format_date
