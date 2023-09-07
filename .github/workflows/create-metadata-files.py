@@ -135,9 +135,9 @@ with open('title.txt', 'w', encoding='utf8') as titlefile:
     generated_metadata["educationalLevel"] = get_labels(data, "educationalLevel", main_lng)
     generated_metadata["learningResourceType"] = get_labels(data, "learningResourceType", main_lng)
     # output_format = list(map(lambda x: x["format"],init_list(config, "output")))
-    generated_metadata["has_online_version"] = "html" in output_format
-    downloads = list(filter(lambda x: x != "html", output_format))
-    generated_metadata["downloads"] = list(map(lambda x: {"pandoc_format": get_pandoc_format(x), "file_extension": get_file_extension(x), "label": x.upper()}, downloads))
+    # generated_metadata["has_online_version"] = "html" in output_format
+    # downloads = list(filter(lambda x: x != "html", output_format))
+    # generated_metadata["downloads"] = list(map(lambda x: {"pandoc_format": get_pandoc_format(x), "file_extension": get_file_extension(x), "label": x.upper()}, downloads))
     languages_with_labels = {"inLanguage": lngs}
     convert_to_standard_vocab_entry(languages_with_labels, "inLanguage")
     add_missing_labels(languages_with_labels, "inLanguage")
