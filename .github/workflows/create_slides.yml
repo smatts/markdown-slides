@@ -18,8 +18,6 @@ jobs:
       with:
         node-version: 18
     - run: ./.github/workflows/create_slides_helper.sh
-    - run: echo $PWD
-    - run: ls -al ./.github/workflows
     - uses: docker://pandoc/core:2.9
       with:
         args: "index.md -o index.html --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css"
