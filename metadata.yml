@@ -1,0 +1,28 @@
+creativeWorkStatus: Published
+name: Markdown Slides Template
+description: >-
+  This template can be used to generate HTML and PDF slides automatically using
+  markdown.
+license:
+  id: https://creativecommons.org/licenses/by/4.0/deed.de
+id: https://smatts.github.io/markdown-slides/
+creator:
+  - givenName: Sophie
+    familyName: Matter
+    type: Person
+    affiliation:
+      name: >-
+        Technische Informationsbibliothek (TIB) - Leibniz-Informationszentrum
+        Technik und Naturwissenschaften - Universitätsbibliothek
+      id: https://ror.org/04aj4c181
+      type: Organization
+keywords:
+  - slides
+  - markdown
+inLanguage:
+  - en
+learningResourceType:
+  - https://w3id.org/kim/hcrt/slide
+educationalLevel:
+  - https://w3id.org/kim/educationalLevel/level_A
+datePublished: '2023-09-07'

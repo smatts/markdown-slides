@@ -23,18 +23,25 @@ done
 cd config
 npx @marp-team/marp-cli@latest
 npx @marp-team/marp-cli@latest --pdf
+npx @marp-team/marp-cli@latest --image png
 cd ..
 mkdir -p pdf
 cp public/*.pdf pdf/
 mkdir -p webslides
 cp public/*.html webslides/
+cp public/*.png webslides/
 
 # Create index.html
 touch index.md
-echo "# Slides\n" > index.md
+echo "## Slides\n" > index.md
 pdf_files=$(find pdf/*.pdf -exec basename \{} .pdf \;)
+echo "| Preview | Title | Download link |" >> index.md
+echo "|---|---|---|" >> index.md
 for file in $pdf_files
 do
-    echo $file
-    echo "* ${file%.pdf}: [HTML](webslides/$file.html) / [PDF](pdf/$file.pdf)" >> index.md
+    title=$(grep "title:" ./slides/$file.md | cut -d: -f2 | sed 's/\s//')
+    if [[ -z $title ]]; then
+        title=${$file%.pdf}
+    fi
+    echo "| ![preview](webslides/$file.png) | **$title** | [HTML](webslides/$file.html) / [PDF](pdf/$file.pdf) |" >> index.md
 done

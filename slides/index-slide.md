@@ -1,3 +1,10 @@
+---
+title: Markdown Slides Template
+author: TIB Hannover
+description: Steps to use this template
+---
+
+
 # Markdown Slides Template
 
 ### This is a template to create slides using Markdown!

@@ -20,7 +20,7 @@ jobs:
     - run: ./.github/workflows/create_slides_helper.sh
     - uses: docker://pandoc/core:2.9
       with:
-        args: "index.md -o index.html" # gets appended to pandoc command
+        args: "index.md -o index.html --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css"
     - uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
@@ -34,7 +34,7 @@ jobs:
         git add -f pdf/*
         git add -f webslides/*
         git add -f index.html
-        git commit -m "Upload PDF slides"
+        git commit -m "Generate slides"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
