@@ -22,7 +22,7 @@ jobs:
       with:
         python-version: '3.10' 
     - run: |
-        python3 -m pip install -r ./github/workflows/requirements.txt
+        python3 -m pip install -r ./.github/workflows/requirements.txt
         python3 ./.github/workflows/create-metadata-files.py
     - uses: docker://pandoc/core:2.9
       with:
