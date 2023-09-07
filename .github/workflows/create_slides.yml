@@ -20,7 +20,7 @@ jobs:
     - run: ./.github/workflows/create_slides_helper.sh
     - uses: docker://pandoc/core:2.9
       with:
-        args: "index.md -o index.html --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css"
+        args: "index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css"
     - uses: actions/upload-pages-artifact@v1
       with:
         path: ./public

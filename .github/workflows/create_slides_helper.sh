@@ -1,10 +1,15 @@
 #!/bin/bash
 
-# Remove old PDF files
+# Remove old files
 for file in pdf/*
 do
     echo "Removing $file"
     rm -f $file
+done
+for file in webslides/*
+do
+    echo "Removing $file"
+    rm -rf $file
 done
 
 # If a file is called index, rename the file
@@ -29,7 +34,8 @@ mkdir -p pdf
 cp public/*.pdf pdf/
 mkdir -p webslides
 cp public/*.html webslides/
-cp public/*.png webslides/
+mkdir -p webslides/preview-images
+cp public/*.png webslides/preview-images
 
 # Create index.html
 touch index.md
@@ -43,5 +49,5 @@ do
     if [[ -z $title ]]; then
         title=${$file%.pdf}
     fi
-    echo "| ![preview](webslides/$file.png) | **$title** | [HTML](webslides/$file.html) / [PDF](pdf/$file.pdf) |" >> index.md
+    echo "| ![preview](./webslides/preview-images/$file.png) | **$title** | [HTML](./webslides/$file.html) / [PDF](./pdf/$file.pdf) |" >> index.md
 done
