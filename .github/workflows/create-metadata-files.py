@@ -73,7 +73,7 @@ def format_date_to_locale(record, main_lng, date_field, date_format_str):
         return format_date(date, locale=main_lng)
         
 
-config = get_config()
+# config = get_config()
 
 data = {}
 with open("metadata.yml", 'r') as stream:
@@ -134,7 +134,7 @@ with open('title.txt', 'w', encoding='utf8') as titlefile:
     generated_metadata["about"] = get_labels(data, "about", main_lng)
     generated_metadata["educationalLevel"] = get_labels(data, "educationalLevel", main_lng)
     generated_metadata["learningResourceType"] = get_labels(data, "learningResourceType", main_lng)
-    output_format = list(map(lambda x: x["format"],init_list(config, "output")))
+    # output_format = list(map(lambda x: x["format"],init_list(config, "output")))
     generated_metadata["has_online_version"] = "html" in output_format
     downloads = list(filter(lambda x: x != "html", output_format))
     generated_metadata["downloads"] = list(map(lambda x: {"pandoc_format": get_pandoc_format(x), "file_extension": get_file_extension(x), "label": x.upper()}, downloads))
