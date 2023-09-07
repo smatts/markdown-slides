@@ -21,9 +21,6 @@ jobs:
     - uses: docker://pandoc/core:2.9
       with:
         args: "index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css"
-    - uses: actions/upload-pages-artifact@v1
-      with:
-        path: ./public
     # Upload PDF files
     - name: Commit files
       run: |
@@ -40,3 +37,10 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
+  upload-pages:
+    runs-on: ubuntu-latest
+    needs: generate-slides
+    steps:
+    - uses: actions/upload-pages-artifact@v1
+      with:
+        path: ./public
