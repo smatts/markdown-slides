@@ -26,7 +26,7 @@ jobs:
         python3 ./.github/workflows/create-metadata-files.py
     - uses: docker://pandoc/core:2.9
       with:
-        args: "index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css --title ./.github/workflows/title.txt"
+        args: "index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css --title title.txt"
     # Upload PDF files
     - name: Commit files
       run: |
