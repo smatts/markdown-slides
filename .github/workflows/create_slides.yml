@@ -28,7 +28,7 @@ jobs:
         echo $PWD
     - uses: docker://pandoc/core:2.9
       with:
-        args: "index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css --title title.txt"
+        args: "title.txt index.md -o index.html --self-contained --template ./.github/workflows/template.html --css ./.github/workflows/pandoc.css"
     # Upload PDF files
     - name: Commit files
       run: |
